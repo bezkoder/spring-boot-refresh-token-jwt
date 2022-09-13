@@ -25,7 +25,6 @@ import com.bezkoder.spring.security.jwt.models.ERole;
 import com.bezkoder.spring.security.jwt.models.RefreshToken;
 import com.bezkoder.spring.security.jwt.models.Role;
 import com.bezkoder.spring.security.jwt.models.User;
-import com.bezkoder.spring.security.jwt.payload.request.LogOutRequest;
 import com.bezkoder.spring.security.jwt.payload.request.LoginRequest;
 import com.bezkoder.spring.security.jwt.payload.request.SignupRequest;
 import com.bezkoder.spring.security.jwt.payload.request.TokenRefreshRequest;
@@ -146,9 +145,11 @@ public class AuthController {
             "Refresh token is not in database!"));
   }
   
-  @PostMapping("/logout")
-  public ResponseEntity<?> logoutUser(@Valid @RequestBody LogOutRequest logOutRequest) {
-    refreshTokenService.deleteByUserId(logOutRequest.getUserId());
+  @PostMapping("/signout")
+  public ResponseEntity<?> logoutUser() {
+    UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    Long userId = userDetails.getId();
+    refreshTokenService.deleteByUserId(userId);
     return ResponseEntity.ok(new MessageResponse("Log out successful!"));
   }
 
