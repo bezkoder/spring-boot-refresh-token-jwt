@@ -49,6 +49,8 @@ INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 ```
 
 Related Posts:
+> [Spring Boot JWT Refresh Token using HttpOnly Cookies](https://www.bezkoder.com/spring-security-refresh-token/)
+
 > [Spring Boot, Spring Security, MySQL: JWT Authentication & Authorization example](https://bezkoder.com/spring-boot-jwt-authentication/)
 
 > [For PostgreSQL](https://bezkoder.com/spring-boot-security-postgresql-jwt-authentication/)
@@ -157,11 +159,11 @@ Run both Back-end & Front-end in one place:
 > [Spring Boot Pagination & Sorting example](https://www.bezkoder.com/spring-boot-pagination-sorting-example/)
 
 Associations:
-> [Spring Boot One To Many example with Spring JPA, Hibernate](https://www.bezkoder.com/jpa-one-to-many/)
+> [JPA/Hibernate One To Many example](https://www.bezkoder.com/jpa-one-to-many/)
 
-> [Spring Boot Many To Many example with Spring JPA, Hibernate](https://www.bezkoder.com/jpa-many-to-many/)
+> [JPA/Hibernate Many To Many example](https://www.bezkoder.com/jpa-many-to-many/)
 
-> [JPA One To One example with Spring Boot](https://www.bezkoder.com/jpa-one-to-one/)
+> [JPA/Hibernate One To One example](https://www.bezkoder.com/jpa-one-to-one/)
 
 Deployment:
 > [Deploy Spring Boot App on AWS – Elastic Beanstalk](https://www.bezkoder.com/deploy-spring-boot-aws-eb/)
