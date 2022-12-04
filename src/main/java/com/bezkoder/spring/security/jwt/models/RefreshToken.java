@@ -1,8 +1,16 @@
 package com.bezkoder.spring.security.jwt.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+
 import java.time.Instant;
 
-import javax.persistence.*;
+
 
 @Entity(name = "refreshtoken")
 public class RefreshToken {

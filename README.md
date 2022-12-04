@@ -23,17 +23,21 @@ You can have an overview of our Spring Boot Server with the diagram below:
 Open `src/main/resources/application.properties`
 
 ```properties
-spring.datasource.url= jdbc:mysql://localhost:3306/testdb?useSSL=false
+spring.datasource.url= jdbc:mysql://localhost:3306/testdb_spring?useSSL=false
 spring.datasource.username= root
 spring.datasource.password= 123456
 
-spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQLDialect
 spring.jpa.hibernate.ddl-auto= update
 
 # App Properties
 bezkoder.app.jwtSecret= bezKoderSecretKey
 bezkoder.app.jwtExpirationMs= 3600000
 bezkoder.app.jwtRefreshExpirationMs= 86400000
+```
+## Run MySQL 8
+```
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest
 ```
 
 ## Run Spring Boot application
@@ -43,6 +47,9 @@ mvn spring-boot:run
 
 ## Run following SQL insert statements
 ```
+create database testdb_spring;
+use testdb_spring;
+
 INSERT INTO roles(name) VALUES('ROLE_USER');
 INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
 INSERT INTO roles(name) VALUES('ROLE_ADMIN');
